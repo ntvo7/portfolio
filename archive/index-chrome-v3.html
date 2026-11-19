@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nguyen Vo — Art Studio</title>
+<meta name="description" content="Nguyen Vo® — a one-person art studio for interfaces that refuse to behave.">
+<meta name="theme-color" content="#F4F3F0">
+<script>try{var t=localStorage.getItem('nv-theme');if(t==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Instrument+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="loading">
+
+<!-- LOADER -->
+<div class="loader" id="loader" aria-hidden="true">
+  <div class="ld-top mono"><span>Nguyen Vo® — Art Studio</span><span>Preparing the room</span></div>
+  <div class="ld-word" id="ldWord">Idea</div>
+  <div class="ld-count"><span id="ldNum">000</span><i>%</i></div>
+</div>
+
+<!-- CURSOR -->
+<div class="cursor" id="cur"></div>
+<div class="cursor-label mono" id="curLabel"></div>
+<div class="cursor-dot" id="dot"></div>
+
+<!-- HUD -->
+<div class="hud mono" aria-label="Navigation">
+  <a href="#hero" class="tl scr">Nguyen Vo®</a>
+  <nav class="tc">
+    <a href="#rules" class="scr">Rules</a>
+    <a href="#exhibits" class="scr">Exhibits</a>
+    <a href="#process" class="scr">Process</a>
+    <a href="#play" class="scr">Play</a>
+    <a href="#contact" class="scr">Contact</a>
+  </nav>
+  <div class="tr" id="time">00:00:00</div>
+  <button class="theme-btn" id="themeBtn" aria-label="Toggle dark mode"><i></i><span id="themeLabel">Dark</span></button>
+  <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="menu">Menu</button>
+  <div class="bl" id="coords">X 0000 · Y 0000</div>
+  <div class="bc" id="secName">Index</div>
+  <div class="br" id="scrollPct">0%</div>
+</div>
+<div class="progress"><i id="prog"></i></div>
+
+<!-- MOBILE MENU -->
+<div class="menu" id="menu">
+  <a href="#rules">Rules <small>01</small></a>
+  <a href="#exhibits">Exhibits <small>02</small></a>
+  <a href="#process">Process <small>03</small></a>
+  <a href="#play">Play <small>04</small></a>
+  <a href="#contact">Contact <small>05</small></a>
+</div>
+
+<main>
+
+<!-- HERO -->
+<header class="hero" id="hero" data-section="Index">
+  <canvas id="gl" data-cursor="Click"></canvas>
+  <div class="hero-top">
+    <p class="tagline serif">A studio of one,<br>breaking rules<br>on purpose.</p>
+    <ul class="hero-list mono">
+      <li>(01) Visual design</li>
+      <li>(02) Motion</li>
+      <li>(03) Interactive</li>
+      <li class="est">Est. 2026</li>
+    </ul>
+  </div>
+  <svg class="badge" viewBox="0 0 200 200" aria-hidden="true">
+    <defs><path id="circ" d="M100,100 m-76,0 a76,76 0 1,1 152,0 a76,76 0 1,1 -152,0"/></defs>
+    <text><textPath href="#circ" class="mono">Scroll to enter ✦ Scroll to enter ✦ Scroll to enter ✦</textPath></text>
+    <path d="M100 82v36M86 106l14 14 14-14" fill="none" stroke="currentColor" stroke-width="2"/>
+  </svg>
+  <h1 class="title" aria-label="Nguyen Vo">
+    <span class="line"><span data-split>Nguyen</span></span>
+    <span class="line"><span data-split>Vo</span><sup>®</sup></span>
+  </h1>
+</header>
+
+<!-- RIBBON -->
+<div class="ribbon" aria-hidden="true">
+  <div class="rb-track">
+    <span>Unlearn the grid</span><i>✦</i><span>Make it weird</span><i>✦</i><span>Ship it anyway</span><i>✦</i><span>Obsess over the tiny things</span><i>✦</i>
+    <span>Unlearn the grid</span><i>✦</i><span>Make it weird</span><i>✦</i><span>Ship it anyway</span><i>✦</i><span>Obsess over the tiny things</span><i>✦</i>
+  </div>
+</div>
+
+<!-- RULES -->
+<section class="rules" id="rules" data-section="Rules">
+  <div class="rules-grid">
+    <div class="rules-head">
+      <span class="mono">House rules — Nº 01</span>
+      <h2>Rules I was taught.<br><em class="serif">Rules I broke.</em></h2>
+    </div>
+    <div class="rules-list">
+      <div class="rule io" data-cursor="Break"><span class="no mono">01</span><div><span class="old">Keep the important stuff above the fold.</span><span class="new serif">Hide the good stuff. Reward the curious.</span></div></div>
+      <div class="rule io" data-cursor="Break"><span class="no mono">02</span><div><span class="old">Use a grid. Always.</span><span class="new serif">Break it on purpose, then break it again.</span></div></div>
+      <div class="rule io" data-cursor="Break"><span class="no mono">03</span><div><span class="old">Never make users wait.</span><span class="new serif">Make the wait the first piece of art.</span></div></div>
+      <div class="rule io" data-cursor="Break"><span class="no mono">04</span><div><span class="old">Stick to two typefaces.</span><span class="new serif">Fall in love with a third.</span></div></div>
+      <div class="rule io" data-cursor="Break"><span class="no mono">05</span><div><span class="old">Tell people exactly where to click.</span><span class="new serif">Let them find out what happens.</span></div></div>
+      <div class="rule io" data-cursor="Break"><span class="no mono">06</span><div><span class="old">Be professional.</span><span class="new serif">Be memorable. Professional follows.</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- STATEMENT -->
+<section class="statement-sec" data-section="Manifesto">
+  <p class="statement" id="statement">I don't design pages. I build small worlds — ones you're allowed to touch, break, and take a little piece of home.</p>
+</section>
+
+<!-- EXHIBITS -->
+<section class="gallery" id="exhibits" data-section="Exhibits">
+  <div class="hs" id="hs">
+    <div class="hs-sticky">
+      <div class="hs-track" id="hsTrack">
+
+        <div class="hs-intro">
+          <span class="mono">Exhibition 01 — 2026</span>
+          <h2>Five small <em class="serif">experiments</em> in disobedience.</h2>
+          <p class="mono">Scroll or swipe → &nbsp;Hover or touch to disturb every piece.<br>None of them are videos. All of them are live.</p>
+        </div>
+
+        <figure class="piece" style="--ar:.8;--mt:6vh">
+          <div class="art" data-cursor="Disturb"><canvas data-kind="flow"></canvas></div>
+          <figcaption class="mono"><span>Nº01</span><b>Flow Field</b><i>Generative / Canvas 2D</i></figcaption>
+        </figure>
+
+        <figure class="piece" style="--ar:1;--mt:-8vh">
+          <div class="art" data-cursor="Disturb"><canvas data-kind="moire"></canvas></div>
+          <figcaption class="mono"><span>Nº02</span><b>Moiré Study</b><i>Interference / Canvas 2D</i></figcaption>
+        </figure>
+
+        <figure class="piece" style="--ar:.74;--mt:10vh">
+          <div class="art" data-cursor="Disturb"><canvas data-kind="glitch"></canvas></div>
+          <figcaption class="mono"><span>Nº03</span><b>Break The Grid</b><i>Type / Signal glitch</i></figcaption>
+        </figure>
+
+        <figure class="piece" style="--ar:1.15;--mt:-4vh">
+          <div class="art" data-cursor="Disturb"><canvas data-kind="orbit"></canvas></div>
+          <figcaption class="mono"><span>Nº04</span><b>Rosette</b><i>Orbits / Trig only</i></figcaption>
+        </figure>
+
+        <figure class="piece" style="--ar:.85;--mt:8vh">
+          <div class="art" data-cursor="Disturb"><canvas data-kind="ripple"></canvas></div>
+          <figcaption class="mono"><span>Nº05</span><b>Pulse Grid</b><i>Waves / Dot matrix</i></figcaption>
+        </figure>
+
+        <div class="hs-end">
+          <h3 class="serif">…and one more.<br>This one is yours.</h3>
+          <span class="mono">Keep scrolling ↓</span>
+        </div>
+      </div>
+      <div class="hs-bar"><i id="hsBar"></i></div>
+      <div class="hs-count mono"><span id="hsNum">00</span> / 05</div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process" id="process" data-section="Process">
+  <div class="pr-head">
+    <span class="mono">The part nobody sees — Nº 02</span>
+    <h2>Effort is <em class="serif">the medium.</em></h2>
+  </div>
+  <div class="pr-grid">
+    <div class="stats">
+      <div class="stat io"><b data-count="412">0</b><span class="mono">Hours poured into this one page</span></div>
+      <div class="stat io"><b data-count="87">0</b><span class="mono">Iterations</span></div>
+      <div class="stat io"><b data-count="14">0</b><span class="mono">Versions deleted without mercy</span></div>
+      <div class="stat io"><b data-count="1">0</b><span class="mono">Obsession</span></div>
+    </div>
+    <div class="log io" id="log">
+      <div class="log-bar mono"><i></i><i></i><i></i><span>studio.log</span></div>
+      <ul class="mono">
+        <li><u>v0.1</u> started with a grid. hated it.</li>
+        <li><u>v0.3</u> deleted the grid.</li>
+        <li><u>v0.4</u> wrote a shader at 2am. it looked like soup.</li>
+        <li><u>v0.6</u> soup → liquid. kept it.</li>
+        <li><u>v0.8</u> every pixel argued with every other pixel.</li>
+        <li><u>v0.9</u> turned the cursor into a character.</li>
+        <li><u>v1.0</u> shipped. still not satisfied. <em>(good)</em><b class="caret"></b></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- PLAYGROUND -->
+<section class="play" id="play" data-section="Play">
+  <canvas id="pg" data-cursor="Draw"></canvas>
+  <div class="play-hint" id="playHint">
+    <span class="mono">Your turn — Nº 03</span>
+    <h2>Leave <em class="serif">a mark.</em></h2>
+    <p class="mono hint-desktop">Move to draw · Click to burst</p>
+    <p class="mono hint-touch">Tap to burst · Turn on draw mode</p>
+  </div>
+  <div class="play-ui mono">
+    <div class="sw" id="swatches">
+      <button class="on" data-pal="signal" style="--c:#F2540A" aria-label="Signal orange palette"></button>
+      <button data-pal="chrome" style="--c:linear-gradient(180deg,#fff,#9a9da2 50%,#e6e7e8)" aria-label="Chrome palette"></button>
+      <button data-pal="void" style="--c:#0A0A0B" aria-label="Void palette"></button>
+      <button data-pal="pearl" style="--c:#F4F3F0" aria-label="Pearl palette"></button>
+    </div>
+    <button id="drawMode" class="touch-only">Draw: off</button>
+    <button id="mirror">Mirror: off</button>
+    <button id="clear">Clear</button>
+    <button id="save">Save PNG ↓</button>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="foot" id="contact" data-section="Contact">
+  <p class="foot-note mono">Built by hand — HTML, CSS, one shader and a lot of stubbornness. No templates. No builders.</p>
+  <h2 class="big" id="big" data-cursor="Hi">Nguyen Vo<sup>®</sup></h2>
+  <div class="foot-row mono">
+    <span>If this made you feel something →</span>
+    <a href="mailto:hello@yourdomain.com" class="scr">hello@yourdomain.com</a>
+    <span class="grow"></span>
+    <a href="#" class="scr">Instagram</a>
+    <a href="#" class="scr">Behance</a>
+    <a href="#" class="scr">LinkedIn</a>
+  </div>
+  <div class="foot-row mono small"><span>© 2026 Nguyen Vo</span><span class="grow"></span><a href="#hero" class="scr">Back to top ↑</a></div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
